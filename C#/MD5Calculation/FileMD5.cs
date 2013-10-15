@@ -9,9 +9,7 @@ namespace MD5Calculation
         {
             using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
-                MD5 md5 = new MD5CryptoServiceProvider();
-                byte[] md5data = md5.ComputeHash(stream);
-                return System.BitConverter.ToString(md5data).Replace("-", "");
+                return System.BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(stream)).Replace("-", "");
             }
         }
     }
