@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography;
 using System.IO;
+using System;
 
 namespace MD5Calculation
 {
@@ -9,7 +10,7 @@ namespace MD5Calculation
         {
             using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
-                return System.BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(stream)).Replace("-", "");
+                return BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(stream)).Replace("-", "");
             }
         }
     }
