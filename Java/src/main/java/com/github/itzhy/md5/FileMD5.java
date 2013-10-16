@@ -12,7 +12,7 @@ public class FileMD5 {
         try (FileInputStream inputStream = new FileInputStream(new File(filePath))) {
             return DigestUtils.md5Hex(inputStream);
         } catch (FileNotFoundException e) {
-            throw new RuntimeException("file not found：[" + filePath + "]。", e);
+            throw new RuntimeException("file not found:[" + filePath + "].", e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
