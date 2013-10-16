@@ -7,20 +7,20 @@ namespace MD5Calculation
         static void Main(string[] args)
         {
             String filePath = getFilePath();
-            Console.WriteLine("该文件的MD5值为：");
+            Console.WriteLine("this file's md5 is:");
             try
             {
                 Console.WriteLine(new FileMD5().Calculate(filePath));
             }
             catch (Exception ex)
             {
-                Console.WriteLine("读取文件：[" + filePath + "]失败，原因：" + ex.Message);
+                Console.WriteLine("faild to read file:[" + filePath + "], due to: " + ex.Message);
             }
         }
 
         private static String getFilePath()
         {
-            Console.WriteLine("请输入需要计算MD5值的文件路径。");
+            Console.WriteLine("please input the file path:");
             return Console.ReadLine();
         }
     }
