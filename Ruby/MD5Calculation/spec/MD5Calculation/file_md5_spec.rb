@@ -20,8 +20,8 @@ describe FileMD5 do
       it "should throw exception." do
         wrong_file_path = 'wrong_path'
 
-        expect { @calculator.calculate(wrong_file_path) }.to raise_error(RuntimeError) { |e|
-          e.message.should == "file not found:[#{wrong_file_path}]." }
+        expect { @calculator.calculate(wrong_file_path) }.to raise_error(Errno::ENOENT) { |e|
+          e.message.should == "No such file or directory - #{wrong_file_path}" }
       end
     end
   end
