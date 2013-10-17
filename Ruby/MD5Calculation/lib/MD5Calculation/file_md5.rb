@@ -2,7 +2,6 @@
 require 'digest/md5'
 
 class FileMD5
-  StandardError
 
   def calculate(file_path)
     Digest::MD5.hexdigest(File.open(file_path).read)
